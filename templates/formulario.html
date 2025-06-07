@@ -10,12 +10,13 @@
 
 </head>
 <body>
-    <p> <a href="/logout">cerrar sesion</a></p>
+  <div class="contenedor-principal">
+    <p><a href="/logout" class="cerrar-sesion">Cerrar sesión</a></p>
     <div class="contenidoBuscar">
         <div class="buscar">
              <form action="/buscar"method="get">
                 <input type="text" name="txtbuscar">
-                <input type="submit" value="Buscar">
+                <input type="submit" value="Buscar" class="btn-cute">
             </form>
         </div>
     </div>
@@ -65,28 +66,29 @@
                 <td>{{ dato[0] }}</td>
                 <td>{{ dato[1] }}</td>
                 <td>{{ dato[2] }}</td>
-                <td><a href="/actualizar/{{ dato[0] }}">Actualizar</a></td>
-                <td><a href="/eliminar/{{ dato[0] }}" onclick="return confirm('¿Estás seguro de que deseas eliminar?')">Eliminar</a></td>
-                <td><a href="/comprar/{{ dato[0] }}">Venta</a></td>
-                <td><a href="/vercompras/{{ dato[0] }}">Ver compras</a></td>
+                <td><a href="/actualizar/{{ dato[0] }}" class="btn-cute">Actualizar</a></td>
+                <td>
+  <a href="/eliminar/{{ dato[0] }}" 
+     class="btn btn-danger" 
+     style="margin: 10px;"
+     onclick="return confirm('¿Estás seguro de que deseas eliminar?')">
+    Eliminar
+  </a>
+</td>
+                <td><a href="/comprar/{{ dato[0] }}" class="btn-cute">Venta</a></td>
+                <td><a href="/vercompras/{{ dato[0] }}" class="link-ver-compras">Ver compras</a></td>
 
             </tr>
             {% endfor %}
         </tbody>
     </table>
 
-<script>
-  $(document).ready(function() {
-    $('#modalRegistro').on('show.bs.modal', function () {
-      $('#contenido-modal').load('/registro');
-    });
-  });
-</script>
+
 <!-- Bootstrap JS + Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- jQuery (necesario para AJAX) -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-
+  </div>
 </body>
 </html>

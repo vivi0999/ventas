@@ -4,21 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INICIO</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='formulario.css') }}">
+    <link rel="stylesheet" href="../static/stilo.css">
+
 </head>
 <body>
-    <form action="/login" method="POST">
-        <h2>iniciar Sesión</h2>
-        <label>Usuario:</label>
-        <input type="text" name="txtuser" required><br><br>
-        <label> Clave:</label>
-        <input type="password" name="txtclave" required><br><br>
-        <button type="submit">iniciar Sesión</button>
-        {% if mensaje %}
-        <p style="color: red;">{{mensaje}}</p>
-        {% endif %}
 
-    </form>
-    
-    
+    <!-- burbujas animadas -->
+    {% for i in range(15) %}
+ <div class="bubble" style="
+    left: {{ loop.index0 * 6 }}%;
+    width: {{ 20 + loop.index0 * 2 }}px;
+    height: {{ 20 + loop.index0 * 2 }}px;
+    animation-delay: -{{ loop.index0 }}s;">
+</div>
+    {% endfor %}
+
+    <div class="login-container">
+        <h2>Iniciar Sesión</h2>
+        <form action="/login" method="POST">
+            <label for="user">Usuario:</label>
+            <input type="text" name="txtuser" id="user" required>
+
+            <label for="clave">Clave:</label>
+            <input type="password" name="txtclave" id="clave" required>
+
+            <button type="submit">Iniciar Sesión</button>
+
+            {% if mensaje %}
+            <p class="mensaje-error">{{ mensaje }}</p>
+            {% endif %}
+        </form>
+    </div>
+
 </body>
 </html>
+<script>
+for (let i = 0; i < 30; i++) {
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    // Posición aleatoria horizontal
+    bubble.style.left = Math.random() * 100 + 'vw';
+
+    // Tamaño aleatorio
+    const size = 20 + Math.random() * 60;
+    bubble.style.width = size + 'px';
+    bubble.style.height = size + 'px';
+
+    // Animación aleatoria
+    bubble.style.animationDuration = (10 + Math.random() * 10) + 's';
+    bubble.style.animationDelay = (Math.random() * 5) + 's';
+
+    // Opacidad aleatoria
+    bubble.style.opacity = (0.4 + Math.random() * 0.4).toFixed(2);
+
+    document.body.appendChild(bubble);
+}
+</script>

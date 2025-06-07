@@ -25,8 +25,7 @@ def index():
        return render_template('formulario.html', mostrar=datos)
     return render_template("login.html")
 
-
-@app.route('/registro', methods=['post','get'])
+@app.route('/registro', methods=['GET','POST'])
 def registro():
     nombre=request.form['txtnombre']
     nit=request.form['txtnit']
@@ -37,6 +36,8 @@ def registro():
     cursor.close
     mostrar=mostrarTodo()
     return render_template('formulario.html',mostrar=mostrar)
+
+
 
 @app.route('/actualizar_cliente', methods=['post'])
 def actualizar_cliente():

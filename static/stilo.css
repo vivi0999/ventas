@@ -1,61 +1,170 @@
-table{
-    width: 80%;
-    margin: 0 auto;
-    border-collapse: collapse;
-    border: 1px solid #ccc;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #4e0000, #990F02, #ff1e1e);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #fff;
 }
-th, td{
-    padding: 8px;
-    text-align: center;
-    border-bottom: 1px solid #ccc;
-}
-th{
-    background-color: #f2f2f2;
-    text-align: center;
-}
-.buscar{
-    width: 100%;
-    text-align: center;
-    margin: 20px 0px 10px 0px;
-}
-.contenidoBuscar{
-    width: 70%;
-    text-align: center;
-    margin: auto;
-}
-.insertarDatos{
-   
-font-size: 40px;
-font-weight: bold;
-width: 89%;
-text-align: right;
-margin: 10px 0px 10px 0px;
 
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
-.insertarDatos a{
-    text-decoration: none;
+
+/* Estilo del buscador */
+.buscar input[type="text"] {
+    padding: 10px;
+    border-radius: 12px;
+    border: 2px solid #ff4b4b;
+    background: #fff0f0;
+    color: #4e0000;
+    outline: none;
+    width: 250px;
+    margin-right: 10px;
 }
-input[type=text]{
-    width: 100%;
-    border-radius: 3px;
-    padding: 5px;
-    border: 1px solid #534d4d;
-    margin: 10px 0px 10px 0px;
-    box-sizing: border-box;
-    resize: vertical;
-    }
-input[type=submit]{
-    width: 20%;
-    border-radius: 3px;
-    padding: 5px;
-    background-color: #0c6828;
-    color: #fcfbfb;
-    
-    margin: 10px 0px 10px 0px;
-    box-sizing: border-box;
-    resize: vertical;
-    }
-label{
+
+.btn-cute, .buscar input[type="submit"] {
+    background-color: #990F02;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.6);
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+.btn-cute:hover, .buscar input[type="submit"]:hover {
+    background-color: #ff1e1e;
+    transform: scale(1.05);
+}
+
+/* Estilo del botón "+" */
+.insertarDatos a {
     display: inline-block;
-    
+    font-size: 28px;
+    background-color: #ff1e1e;
+    color: white;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(255, 0, 0, 0.6);
+    transition: 0.3s ease;
+}
+
+.insertarDatos a:hover {
+    background-color: #990F02;
+    transform: scale(1.1);
+}
+
+/* Estilo de la tabla */
+table {
+    width: 90%;
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+table th {
+    background-color: rgba(255, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px #4e0000;
+}
+
+table tr:hover {
+    background-color: rgba(255, 50, 50, 0.2);
+}
+
+
+
+
+
+
+
+
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: #333;
+}
+
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #5e0303;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover {
+    background-color: #020202;
+}
+.link-pdf {
+    color: #080707;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-pdf:hover {
+    color: #800000;
+    text-decoration: underline;
+}
+
+.link-ver-compras {
+    display: inline-block;   /* permite que el margen funcione correctamente */
+    margin: 10px;            /* ajusta el espacio alrededor */
+    padding: 6px 12px;       /* opcional: relleno interno como un botón */
+    color: #b30000;          /* cambia el color del texto */
+    text-decoration: none;   /* quita el subrayado */
+    border: 1px solid #b30000; /* opcional: borde estilo botón */
+    border-radius: 5px;      /* bordes redondeados */
+    font-weight: bold;
+    background-color: #ffe6e6; /* color de fondo suave */
+}
+
+.link-ver-compras:hover {
+    background-color: #ffcccc; /* color de fondo al pasar el mouse */
+    color: #800000;
 }

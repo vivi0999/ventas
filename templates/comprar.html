@@ -7,6 +7,12 @@
 </head>
 <body>
     <form method="post" action="/comprar">
+        <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPRAS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stilo.css') }}">
+
 
         <input type="hidden" name="txtid" value="{{id}}">
         <p>nombre del cliente:{{datos[1]}}</p>

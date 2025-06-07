@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/stilo.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stilo.css') }}">
+
+
     <title>VER DETALLES DE COMPRAS</title>
 </head>
 <body>
-    <a href="/">REGRESAR</a>
+    <a href="/" class="btn-cute">← Regresar</a>
     <h2>detalle compra</h2>
     {% if datos %}
-    <p><a href="/reporte/{{datos[0][4]}}" target="_blank">PDF</a></p>
+    <p><a href="/reporte/{{datos[0][4]}}" target="_blank" style="color:#b30000; text-decoration:none; font-weight:bold;">PDF</a></p>    
     {% endif %}
         <table> 
             <tr>
