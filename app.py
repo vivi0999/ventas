@@ -190,6 +190,21 @@ def generar_pdf(id):
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'inline; filename=reporte_compras.pdf'
     return response
+@app.route('/usuario')
+def usuario():
+    return render_template('usuario.html')
+
+@app.route('/usuario', methods=['POST'])
+def insertarUsuario():
+    usuario = request.form['txtusuario']
+    clave = request.form['txtclave']
+    rol = request.form['txtrol']
+    cursor = conexion.cursor()
+    sql = "INSERT INTO tbusuario (user, clave, rol) VALUES (%s, %s, %s)"
+    cursor.execute(sql, (usuario,clave,rol))
+    conexion.commit()
+    cursor.close()
+    return redirect('/')
 
 
 if __name__=='__main__':

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Registro Estilo Hacker</title>
+  <link rel="stylesheet" href="/static/estilousuario.css">
+</head>
+<body>
+  <!-- Fondo animado tipo hacker -->
+  <div class="background">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+
+  <div class="form-container">
+    <form action="/usuario" method="POST">
+      <h2>Registro Usuario</h2>
+
+      <label for="txtusuario">Nombre Usuario</label>
+      <input type="text" name="txtusuario" id="txtusuario" required>
+
+      <label for="txtclave">Clave</label>
+      <input type="password" name="txtclave" id="txtclave" required>
+
+      <label for="txtrol">Rol</label>
+      <select name="txtrol" id="txtrol" required>
+        <option value="root">root</option>
+        <option value="admin">admin</option>
+      </select>
+
+      <input type="submit" value="Insertar">
+    </form> <br>
+     <a href="/">REGRESAR</a>
+  </div>
+</body>
+</html>
